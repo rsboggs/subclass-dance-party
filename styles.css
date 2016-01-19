@@ -37,3 +37,12 @@ body, a:link, a:visited, a:active{
 .main-content {
   height: 100vh;
 }
+
+.dancer.moving {
+  border: 0;
+  border-radius: 0;
+  background: url('https://media.giphy.com/media/7hNVLsDhspgBO/giphy.gif') center center;
+  background-size: cover;
+  height: 90px;
+  width: 90px;
+}
