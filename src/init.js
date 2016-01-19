@@ -57,10 +57,24 @@ $(document).ready(function() {
     }, 3500);
   });
 
-  $(".switchPositions").on("click", function() {
+  $(".switchPositionButton").on("click", function() {
     var dancers = window.dancers.slice(0);
     var distance = function(currentDancer, nextDancer) {
       return Math.sqrt(Math.pow(currentDancer.top - nextDancer.top, 2) + Math.pow(currentDancer.left - nextDancer.left, 2));
+    };
+    var setPositionTransition = function(firstDancer, secondDancer) {
+      firstDancer.$node.css({left: firstDancer.left, top: firstDancer.top});
+      firstDancer.$node.animate({left: secondDancer.left, top: secondDancer.top}, 1000);
+      
+      secondDancer.$node.css({left: secondDancer.left, top: secondDancer.top});
+      secondDancer.$node.animate({left: firstDancer.left, top: firstDancer.top}, 1000);
+
+      var tempFirstLeft = firstDancer.left;
+      var tempFirstTop = firstDancer.top;
+      firstDancer.left = secondDancer.left;
+      firstDancer.top = secondDancer.top;
+      secondDancer.left = tempFirstLeft;
+      secondDancer.top = tempFirstTop;
     };
 
     while(dancers.length > 0) {
@@ -74,7 +88,8 @@ $(document).ready(function() {
           closest = i;
         }
       }
-      dancers.splice(closest, 1);
+      var closestDancer = dancers.splice(closest, 1)[0];
+      setPositionTransition(currentDancer, closestDancer);
     }
   });
   
