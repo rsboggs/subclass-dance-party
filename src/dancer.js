@@ -5,6 +5,7 @@ var Dancer = function(top, left, timeBetweenSteps) {
   this.left = left;
   this.top = top;
   this.step();
+  this.lineupBool = false;
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
   // this one sets the position to some random default point within the body
   this.setPosition(top, left);
@@ -24,11 +25,12 @@ Dancer.prototype.setPosition = function(top, left) {
 };
 
 Dancer.prototype.lineup = function() {
-  if (this.$node.offset().left !== 0) {
+  if (!this.lineupBool) {
     this.$node.css({left: this.left});
     this.$node.animate({left: 0}, 2000);
   } else {
     this.$node.css({left: 0});
     this.$node.animate({left: this.left}, 2000);
   }
+  this.lineupBool = !this.lineupBool;
 };
