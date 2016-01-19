@@ -56,6 +56,27 @@ $(document).ready(function() {
       $(".main-content").css({"background-image": 'url("http://www.zeldadungeon.net/wp-content/uploads/2015/01/hyrule-temple-smash.jpg")'});
     }, 3500);
   });
+
+  $(".switchPositions").on("click", function() {
+    var dancers = window.dancers.slice(0);
+    var distance = function(currentDancer, nextDancer) {
+      return Math.sqrt(Math.pow(currentDancer.top - nextDancer.top, 2) + Math.pow(currentDancer.left - nextDancer.left, 2));
+    };
+
+    while(dancers.length > 0) {
+      var currentDancer = dancers.shift();
+      var closest = 0;
+      var lowestDistance = distance(currentDancer, dancers[closest]);
+      for (var i = 1; i < dancers.length; i++)  {
+        var currDistance = distance(currentDancer, dancers[i]);
+        if (currDistance < lowestDistance) {
+          lowestDistance = currDistance;
+          closest = i;
+        }
+      }
+      dancers.splice(closest, 1);
+    }
+  });
   
 });
 
