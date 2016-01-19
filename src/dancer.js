@@ -22,3 +22,13 @@ Dancer.prototype.setPosition = function(top, left) {
   //
   this.$node.offset({ top: top, left: left});
 };
+
+Dancer.prototype.lineup = function() {
+  if (this.$node.offset().left !== 0) {
+    this.$node.css({left: this.left});
+    this.$node.animate({left: 0}, 2000);
+  } else {
+    this.$node.css({left: 0});
+    this.$node.animate({left: this.left}, 2000);
+  }
+};
