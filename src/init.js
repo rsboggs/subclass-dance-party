@@ -43,6 +43,16 @@ $(document).ready(function() {
 
     arranged = !arranged;
   });
+
+  $(".blackHoleButton").on("click", function(event) {
+    var top = $(".main-content").height() / 2;
+    var left = $(".main-content").width() / 2;
+    $(".main-content").css({"background-image": 'url("http://www.dailygalaxy.com/.a/6a00d8341bf7f753ef01b7c7a7b3ff970b-pi")'});
+    for (var i = 0; i < window.dancers.length; i++) {
+      var node = window.dancers[i];
+      node.blackHole(top, left);
+    }
+  });
   
 });
 

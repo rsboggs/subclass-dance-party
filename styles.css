@@ -9,6 +9,12 @@ body{
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
+
+.left-buttons {
+  float: left;
+  padding:5px 12px;
+}
+
 .title, .addDancerButton{
   padding:5px 12px;
   float:right;
@@ -37,6 +43,13 @@ body, a:link, a:visited, a:active{
   transition: all 0.5s;
 }
 
+.dancer.bigger:hover {
+  -webkit-animation-name: rotatebox;
+  -webkit-animation-duration:  0.8s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode : forwards;
+}
+
 .dancer.bigger.active {
   height: 180px;
   width: 180px;
@@ -51,4 +64,26 @@ body, a:link, a:visited, a:active{
   height: 100vh;
   background: url('http://www.zeldadungeon.net/wp-content/uploads/2015/01/hyrule-temple-smash.jpg') center center;
   background-size: cover;
+}
+
+@-moz-keyframes rotatebox /*--for firefox--*/{
+
+    from{
+        -moz-transform:rotate(0deg);
+    }       
+    to{
+        -moz-transform:rotate(360deg);
+    }                       
+
+}
+
+@-webkit-keyframes rotatebox /*--for webkit--*/{
+
+    from{
+        -webkit-transform:rotate(0deg);
+    }       
+    to{
+        -webkit-transform:rotate(360deg);
+    }                       
+
 }

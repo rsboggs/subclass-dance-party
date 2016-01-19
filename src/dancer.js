@@ -4,6 +4,7 @@ var Dancer = function(top, left, timeBetweenSteps) {
   this.$node = $('<span class="dancer"></span>');
   this.left = left;
   this.top = top;
+  this.timeBetweenSteps = timeBetweenSteps;
   this.step();
   this.lineupBool = false;
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
@@ -11,10 +12,10 @@ var Dancer = function(top, left, timeBetweenSteps) {
   this.setPosition(top, left);
 };
 
-Dancer.prototype.step = function(timeBetweenSteps) {
+Dancer.prototype.step = function() {
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
-  setTimeout((function() {this.step();}).bind(this), timeBetweenSteps);
+  setTimeout((function() {this.step();}).bind(this), this.timeBetweenSteps);
 };
 
 Dancer.prototype.setPosition = function(top, left) {
@@ -33,4 +34,12 @@ Dancer.prototype.lineup = function() {
     this.$node.animate({left: this.left}, 2000);
   }
   this.lineupBool = !this.lineupBool;
+};
+
+Dancer.prototype.blackHole = function(yCenter, xCenter) {
+  this.$node.css({left: this.left, top: this.top});
+  this.$node.animate({left: xCenter, top: yCenter}, 3000);
+  setTimeout((function() {
+    this.$node.css({"visibility": "hidden"});
+  }).bind(this) ,3000);
 };
