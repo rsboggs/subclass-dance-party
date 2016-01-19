@@ -22,6 +22,18 @@ body, a:link, a:visited, a:active{
 }
 .dancer{
   border:10px solid red;
-  border-radius:10px;
+  border-radius:50%;
   position:absolute;
+}
+
+.dancer.bigger{
+  transition: all 0.5s;
+}
+
+.dancer.bigger.active {
+  border: 100px solid red;
+}
+
+.main-content {
+  height: 100vh;
 }
