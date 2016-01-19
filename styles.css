@@ -46,3 +46,12 @@ body, a:link, a:visited, a:active{
   height: 90px;
   width: 90px;
 }
+
+.dancer.blinky {
+  border: 0;
+  border-radius: 0;
+  background: url('http://orig06.deviantart.net/6e43/f/2012/274/f/0/chibi_link_animated_by_timtam13-d5gfxac.gif') center center;
+  background-size: cover;
+  height: 90px;
+  width: 90px;
+}
