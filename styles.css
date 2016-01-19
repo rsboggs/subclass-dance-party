@@ -21,37 +21,34 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:50%;
-  position:absolute;
-}
-
-.dancer.bigger{
-  transition: all 0.5s;
-}
-
-.dancer.bigger.active {
-  border: 100px solid red;
-}
-
-.main-content {
-  height: 100vh;
-}
-
-.dancer.moving {
-  border: 0;
-  border-radius: 0;
-  background: url('https://media.giphy.com/media/7hNVLsDhspgBO/giphy.gif') center center;
-  background-size: cover;
   height: 90px;
+  position:absolute;
   width: 90px;
 }
 
 .dancer.blinky {
-  border: 0;
-  border-radius: 0;
   background: url('http://orig06.deviantart.net/6e43/f/2012/274/f/0/chibi_link_animated_by_timtam13-d5gfxac.gif') center center;
   background-size: cover;
-  height: 90px;
-  width: 90px;
+}
+
+.dancer.bigger {
+  background: url('https://media.giphy.com/media/1Cu0an9A9VM52/giphy.gif') center center;
+  background-size: cover;
+  transition: all 0.5s;
+}
+
+.dancer.bigger.active {
+  height: 180px;
+  width: 180px;
+}
+
+.dancer.moving {
+  background: url('https://media.giphy.com/media/7hNVLsDhspgBO/giphy.gif') center center;
+  background-size: cover;
+}
+
+.main-content {
+  height: 100vh;
+  background: url('http://www.zeldadungeon.net/wp-content/uploads/2015/01/hyrule-temple-smash.jpg') center center;
+  background-size: cover;
 }
