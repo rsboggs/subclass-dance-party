@@ -52,6 +52,9 @@ $(document).ready(function() {
       var node = window.dancers[i];
       node.blackHole(top, left);
     }
+    setTimeout(function() {
+      $(".main-content").css({"background-image": 'url("http://www.zeldadungeon.net/wp-content/uploads/2015/01/hyrule-temple-smash.jpg")'});
+    }, 3500);
   });
   
 });

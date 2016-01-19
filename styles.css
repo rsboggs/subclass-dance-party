@@ -43,11 +43,16 @@ body, a:link, a:visited, a:active{
   transition: all 0.5s;
 }
 
-.dancer.bigger:hover {
+.dancer.bigger:hover, .rotate {
   -webkit-animation-name: rotatebox;
   -webkit-animation-duration:  0.8s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-fill-mode : forwards;
+}
+
+.rotate {
+  -webkit-animation-duration:  0.4s; 
+  -webkit-animation-iteration-count: infinite;
 }
 
 .dancer.bigger.active {

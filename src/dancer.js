@@ -39,6 +39,7 @@ Dancer.prototype.lineup = function() {
 Dancer.prototype.blackHole = function(yCenter, xCenter) {
   this.$node.css({left: this.left, top: this.top});
   this.$node.animate({left: xCenter, top: yCenter}, 3000);
+  this.$node.addClass("rotate");
   setTimeout((function() {
     this.$node.css({"visibility": "hidden"});
   }).bind(this) ,3000);
